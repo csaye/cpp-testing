@@ -19,7 +19,7 @@ void append(std::string &str, int num)
     }
     else if (num < 0)
     {
-        for (int i = 0; i > num; i++)
+        for (int i = 0; i > num; i--)
         {
             str += "-";
         }
@@ -47,5 +47,5 @@ int main()
 {
     std::string input = getUserString();
     std::string output = convertUserString(input);
-    std::cout << input << " in Brainfuck is " << output << "\n";
+    std::cout << "String \"" << input << "\" in Brainfuck is:\n" << output << "\n";
 }
