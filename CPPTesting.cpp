@@ -2,21 +2,31 @@
 
 using namespace std;
 
-string getUserInput()
+void printInstructions()
 {
-    string input;
-    cin >> input;
-    return input;
+    cout << "Welcome. Please enter people into the database with their name, age, and occupation." << endl;
 }
 
-void printUserInput(string input)
+void getUserCommands()
 {
-    cout << input;
+    string input;
+    bool running = true;
+
+    while (running)
+    {
+        cin >> input;
+
+        if (input == "quit")
+        {
+            running = false;
+        }
+    }
 }
 
 int main()
 {
-    printUserInput(getUserInput());
+    printInstructions();
+    getUserCommands();
 
     return 0;
 }
