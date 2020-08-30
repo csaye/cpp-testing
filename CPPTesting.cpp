@@ -57,6 +57,7 @@ void setPerson(Student *pStudent)
         cout << "Invalid age. Please enter an integer: ";
     }
     cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     char grade;
     cout << "Please enter a grade: ";
@@ -67,6 +68,7 @@ void setPerson(Student *pStudent)
         cout << "Invalid grade. Please enter a single character: ";
     }
     cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     Student student(name, age, grade);
 
