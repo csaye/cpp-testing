@@ -41,12 +41,12 @@ class Student : public Person
     }
 };
 
-void printInstructions()
+void print_instructions()
 {
     cout << "Welcome to the student database.\n";
 }
 
-void setPerson(Student *pStudent)
+void set_person(Student *pStudent)
 {
     string name;
     cout << "Please enter a name: ";
@@ -81,7 +81,7 @@ void setPerson(Student *pStudent)
     cout << "The student has been successfully set.\n";
 }
 
-void getPerson(Student *pStudent)
+void get_person(Student *pStudent)
 {
     Student student = *pStudent;
 
@@ -97,7 +97,7 @@ void getPerson(Student *pStudent)
     cout << "Grade: " << student.grade << "\n";
 }
 
-void clearPerson(Student *pStudent)
+void clear_person(Student *pStudent)
 {
     Student student;
     *pStudent = student;
@@ -105,7 +105,7 @@ void clearPerson(Student *pStudent)
     cout << "The student has been successfully cleared.\n";
 }
 
-void getUserCommands()
+void get_user_commands()
 {
     string input;
     bool running = true;
@@ -123,15 +123,15 @@ void getUserCommands()
         }
         else if (input == "set")
         {
-            setPerson(pStudent);
+            set_person(pStudent);
         }
         else if (input == "get")
         {
-            getPerson(pStudent);
+            get_person(pStudent);
         }
         else if (input == "clear")
         {
-            clearPerson(pStudent);
+            clear_person(pStudent);
         }
         else if (input == "help")
         {
@@ -148,8 +148,8 @@ void getUserCommands()
 
 int main()
 {
-    printInstructions();
-    getUserCommands();
+    print_instructions();
+    get_user_commands();
 
     return 0;
 }
