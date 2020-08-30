@@ -22,6 +22,13 @@ class Student
         int age;
         char grade;
     
+    Student()
+    {
+        name = "";
+        age = -1;
+        grade = ' ';
+    }
+
     Student(string _name, int _age, char _grade)
     {
         name = _name;
@@ -32,10 +39,10 @@ class Student
 
 void printInstructions()
 {
-    cout << "Welcome to the student database.";
+    cout << "Welcome to the student database.\n";
 }
 
-void addPerson()
+void setPerson(Student *pStudent)
 {
     string name;
     cout << "Please enter a name: ";
@@ -51,24 +58,57 @@ void addPerson()
 
 
     Student student(name, age, grade);
+
+    *pStudent = student;
+
+    cout << "The student has been successfully set.\n";
+}
+
+void removePerson(Student *pStudent)
+{
+    Student student;
+    *pStudent = student;
+
+    cout << "The student has been successfully removed.\n";
+}
+
+void getPerson(Student *pStudent)
+{
+    Student student = *pStudent;
+
+    cout << "The student currently stored has this information:\n";
+    cout << "Name: " << student.name << "\n";
+    cout << "Age: " << student.age << "\n";
+    cout << "Grade: " << student.grade << "\n";
 }
 
 void getUserCommands()
 {
     string input;
     bool running = true;
+    Student student;
+    Student *pStudent = &student;
 
     while (running)
     {
+        cout << "> ";
         cin >> input;
 
         if (input == "quit")
         {
             running = false;
         }
-        else if (input == "add")
+        else if (input == "set")
         {
-            addPerson();
+            setPerson(pStudent);
+        }
+        else if (input == "remove")
+        {
+            removePerson(pStudent);
+        }
+        else if (input == "get")
+        {
+            getPerson(pStudent);
         }
     }
 }
