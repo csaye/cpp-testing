@@ -50,12 +50,23 @@ void setPerson(Student *pStudent)
 
     int age;
     cout << "Please enter an age: ";
-    cin >> age;
+    while (!(cin >> age))
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid age. Please enter an integer: ";
+    }
+    cin.clear();
 
     char grade;
     cout << "Please enter a grade: ";
-    cin >> grade;
-
+    while (!(cin >> grade))
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid grade. Please enter a single character: ";
+    }
+    cin.clear();
 
     Student student(name, age, grade);
 
