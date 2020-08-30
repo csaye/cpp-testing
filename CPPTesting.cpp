@@ -8,6 +8,12 @@ class Person
         string name;
         int age;
     
+    Person()
+    {
+        name = "";
+        age = -1;
+    }
+
     Person(string _name, int _age)
     {
         name = _name;
@@ -15,11 +21,9 @@ class Person
     }
 };
 
-class Student
+class Student : public Person
 {
     public:
-        string name;
-        int age;
         char grade;
     
     Student()
@@ -80,6 +84,12 @@ void setPerson(Student *pStudent)
 void getPerson(Student *pStudent)
 {
     Student student = *pStudent;
+
+    if (student.name == "")
+    {
+        cout << "The student has not been set.\n";
+        return;
+    }
 
     cout << "The student currently stored has this information:\n";
     cout << "Name: " << student.name << "\n";
