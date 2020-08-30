@@ -77,14 +77,6 @@ void setPerson(Student *pStudent)
     cout << "The student has been successfully set.\n";
 }
 
-void removePerson(Student *pStudent)
-{
-    Student student;
-    *pStudent = student;
-
-    cout << "The student has been successfully removed.\n";
-}
-
 void getPerson(Student *pStudent)
 {
     Student student = *pStudent;
@@ -93,6 +85,14 @@ void getPerson(Student *pStudent)
     cout << "Name: " << student.name << "\n";
     cout << "Age: " << student.age << "\n";
     cout << "Grade: " << student.grade << "\n";
+}
+
+void clearPerson(Student *pStudent)
+{
+    Student student;
+    *pStudent = student;
+
+    cout << "The student has been successfully cleared.\n";
 }
 
 void getUserCommands()
@@ -115,14 +115,24 @@ void getUserCommands()
         {
             setPerson(pStudent);
         }
-        else if (input == "remove")
-        {
-            removePerson(pStudent);
-        }
         else if (input == "get")
         {
             getPerson(pStudent);
         }
+        else if (input == "clear")
+        {
+            clearPerson(pStudent);
+        }
+        else if (input == "help")
+        {
+            cout << "Commands:\n";
+            cout << "quit, set, get, clear, help\n";
+        }
+        else
+        {
+            cout << "Invalid input. Type \"help\" for help.\n";
+        }
+        
     }
 }
 
