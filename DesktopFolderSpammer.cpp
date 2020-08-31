@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-void createDesktopFolder(int count std::string username)
+void createDesktopFolder(int count, std::string username)
 {
     for (int i = 0; i < count; i++)
     {
@@ -13,5 +13,5 @@ void createDesktopFolder(int count std::string username)
 
 int main()
 {
-    createDesktopFolder(3, "HomeiMac");
+    createDesktopFolder(0, "HomeiMac");
 }
