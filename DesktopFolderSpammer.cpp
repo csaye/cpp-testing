@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
 
-void createDesktopFolder(int count)
+void createDesktopFolder(int count std::string username)
 {
     for (int i = 0; i < count; i++)
     {
-        std::ofstream file("/Documents/pranked" + std::to_string(i) + ".txt");
+        std::ofstream file("Users/" + username + "/Desktop/pranked" + std::to_string(i) + ".txt");
         file << "you just got pranked";
         file.close();
     }
@@ -13,5 +13,5 @@ void createDesktopFolder(int count)
 
 int main()
 {
-    createDesktopFolder(3);
+    createDesktopFolder(3, "HomeiMac");
 }
